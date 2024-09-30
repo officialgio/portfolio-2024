@@ -1,4 +1,4 @@
-import "../../components/Background/section-background.styles.scss";
+import "../../components/Background/background.styles.scss";
 
 const BackgroundSection = () => {
   return (
@@ -18,7 +18,7 @@ const BackgroundSection = () => {
         <span className="highlight">
           I hope I can take part in the{" "}
           <span className="light">engineering</span> and
-          <span className="light">designing</span> spectrum — a combination of
+          <span className="light"> designing</span> spectrum — a combination of
           technical knowledge with my creative vision to design and implement
           solutions that fit customer needs.
         </span>
