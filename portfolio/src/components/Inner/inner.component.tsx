@@ -26,9 +26,15 @@ export const Inner = ({ children }: InnerProps) => {
     initial: {
       opacity: 0,
     },
+
     enter: {
       opacity: 1,
+
+      transition: {
+        duration: 0.5,
+      },
     },
+
     exit: {
       opacity: 1,
     },
@@ -50,12 +56,36 @@ export const Inner = ({ children }: InnerProps) => {
     },
   };
 
+  const perspective = {
+    initial: {
+      y: "0", // exit
+      scale: 1,
+      opacity: 1,
+    },
+    enter: {
+      y: "0", // exit
+      scale: 1,
+      opacity: 1,
+    },
+    exit: {
+      y: -100,
+      scale: 0.9,
+      opacity: 0.5,
+      transition: {
+        duration: 1.2,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+  };
+
   return (
     <div className="inner">
       <motion.div {...anim(slide)} className="slide"></motion.div>
-      <motion.div {...anim(opacity)} className="page">
-        <Navigation />
-        {children}
+      <motion.div {...anim(perspective)} className="page">
+        <motion.div {...anim(opacity)}>
+          <Navigation />
+          {children}
+        </motion.div>
       </motion.div>
     </div>
   );

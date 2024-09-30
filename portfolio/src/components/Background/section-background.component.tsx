@@ -1,4 +1,4 @@
-import "../../components/section-background/section-background.styles.scss";
+import "../../components/Background/section-background.styles.scss";
 
 const BackgroundSection = () => {
   return (

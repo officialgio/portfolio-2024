@@ -1,5 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
-import BackgroundSection from "../../components/section-background/section-background.component";
+import BackgroundSection from "../../components/Background/section-background.component";
 import { Inner } from "../../components/Inner/inner.component";
 
 const Home = () => {

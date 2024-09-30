@@ -1,11 +1,15 @@
 .inner {
+  background-color: black;
+  .page {
+    background-color: white;
+  }
   /* Slider animation template */
   .slide {
     position: fixed;
     z-index: 3;
     top: 0;
     left: 0;
-    background-color: gray;
+    background-color: white;
     width: 100vw;
     height: 100vh;
   }

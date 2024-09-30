@@ -12,6 +12,10 @@
   --clr-transparent-light: rgba(255, 255, 255, 0.4);
   --clr-transparent-full: rgba(255, 255, 255, 1);
 
+  /* font-families */
+  --ff-apple-normal: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
+
   /* font-sizes */
   --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
   --fs-800: clamp(3.25rem, 3rem + 2vw, 6.25rem);
@@ -23,6 +27,102 @@
   --fs-300: clamp(1rem, 0.94rem - 0.02vw, 1.125rem);
   --fs-200: clamp(0.66rem, 0.83rem - 0.24vw, 0.78rem);
   --fs-logo: 300;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/**/
+path,
+i,
+svg {
+  pointer-events: none !important;
+  /* Allows us to tap in the button without tapping in the actual img */
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  transition: all 250ms ease-in-out;
+}
+
+a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style-type: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-apple-normal);
+  color: var(--clr-black);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+::-webkit-scrollbar {
+  width: 0.2em;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--clr-black);
+  border-radius: 100vw;
 }
 
 /* ------------------------- Main Elements -------------------------------------------------- */
