@@ -10,6 +10,17 @@ import { About } from "./components/About/about.component";
 function App() {
   const location = useLocation();
 
+  /**
+   * Initialize Smooth Scroll Animations
+   */
+  // useEffect(() => {
+  //   (async () => {
+  //     const LocomotiveScroll = (await import("locomotive-scroll")).default;
+
+  //     const locomotiveScroll = new LocomotiveScroll();
+  //   })();
+  // }, []);
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
