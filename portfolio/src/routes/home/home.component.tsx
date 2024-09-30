@@ -1,9 +1,10 @@
 import { Fragment } from "react/jsx-runtime";
 import BackgroundSection from "../../components/section-background/section-background.component";
+import { Inner } from "../../components/Inner/inner.component";
 
 const Home = () => {
   return (
-    <Fragment>
+    <Inner>
       <section className="section home-intro about-image">
         <div className="container medium">
           <div className="row">
@@ -28,7 +29,7 @@ const Home = () => {
         </div>
       </section>
       <BackgroundSection />
-    </Fragment>
+    </Inner>
   );
 };
 

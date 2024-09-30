@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 
 const Navigation = () => {
@@ -6,7 +6,9 @@ const Navigation = () => {
     <Fragment>
       <nav className="flex">
         <a href="">
-          <h2>@Gio</h2>
+          <h2>
+            <Link to="about">@Gio </Link>
+          </h2>
         </a>
       </nav>
       {/* // Burger */}
