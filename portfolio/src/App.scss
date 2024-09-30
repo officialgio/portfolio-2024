@@ -1,0 +1,121 @@
+:root {
+  --section-padding: clamp(5em, 21vh, 12em);
+  --container-padding: 5vw;
+
+  --title-size: clamp(5em, 7.5vw, 7.5em);
+
+  --color-white: whitesmoke;
+  --color-dark: #1c1d20;
+
+  --clr-black: #1d1d1f;
+  --clr-transparent: rgba(255, 255, 255, 0.6);
+  --clr-transparent-light: rgba(255, 255, 255, 0.4);
+  --clr-transparent-full: rgba(255, 255, 255, 1);
+
+  /* font-sizes */
+  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+  --fs-800: clamp(3.25rem, 3rem + 2vw, 6.25rem);
+  --fs-700: clamp(1.94rem, 1.25rem + 3.45vw, 3.71rem);
+  --fs-650: clamp(1.5rem, 1.25rem + 2vw, 3rem);
+  --fs-600: clamp(2.62rem, 1.23rem + 1.96vw, 2.62rem);
+  --fs-500: clamp(1.35rem, 1.15rem + 0.99vw, 1.86rem);
+  --fs-400: clamp(1.13rem, 1.05rem + 0.37vw, 1.31rem);
+  --fs-300: clamp(1rem, 0.94rem - 0.02vw, 1.125rem);
+  --fs-200: clamp(0.66rem, 0.83rem - 0.24vw, 0.78rem);
+  --fs-logo: 300;
+}
+
+/* ------------------------- Main Elements -------------------------------------------------- */
+.section {
+  display: block;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  position: relative;
+  min-height: 100vh;
+  border: 3px solid hotpink;
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  max-width: 100em;
+
+  &.medium {
+    padding-left: calc(var(--container-padding) * 2);
+    padding-right: calc(var(--container-padding) * 2);
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.flex-col {
+  display: block;
+  width: 100%;
+  order: 2;
+  position: relative;
+}
+
+h3.big {
+  font-size: calc(var(--title-size) * 0.45);
+  line-height: 1.2;
+}
+
+h4 {
+  font-weight: 400;
+  width: 20ch;
+}
+
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark h4,
+.theme-dark h5,
+.theme-dark p {
+  color: var(--color-white);
+}
+
+/* ------------------------- Utils -------------------------------------------------- */
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-650 {
+  font-size: var(--fs-650);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-550 {
+  font-size: var(--fs-550);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}

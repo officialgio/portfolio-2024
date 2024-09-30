@@ -1,0 +1,18 @@
+/* ------------------------- Background -------------------------------------------------- */
+.section {
+  &.background {
+    position: relative;
+    justify-content: center;
+    padding: var(--background-padding, 4.25rem 2rem);
+    background-color: var(--clr-black);
+    min-height: 105vh;
+  }
+
+  & .highlight {
+    color: var(--clr-transparent-light);
+  }
+
+  & .light {
+    color: var(--clr-transparent-full);
+  }
+}
