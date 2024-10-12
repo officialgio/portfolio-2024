@@ -58,12 +58,12 @@ export const Inner = ({ children }: InnerProps) => {
 
   const perspective = {
     initial: {
-      y: "0", // exit
+      y: "0", // start at 0 due to exit animation
       scale: 1,
       opacity: 1,
     },
     enter: {
-      y: "0", // exit
+      y: "0", // exit purpose as well
       scale: 1,
       opacity: 1,
     },

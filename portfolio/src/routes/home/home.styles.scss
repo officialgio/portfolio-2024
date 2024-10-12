@@ -1,0 +1,41 @@
+/* ------------------------- Home - Intro -------------------------------------------------- */
+.home-intro {
+  padding-bottom: calc(var(--section-padding) * 0.66);
+}
+
+.home-intro .row {
+  flex-wrap: nowrap;
+}
+
+.home-intro .flex-col:nth-child(1) {
+  width: 70%;
+  padding-right: var(--gap-padding);
+}
+
+.about-image .flex-col:nth-child(2) {
+  width: 35%;
+}
+
+// Add gray background as cover to keep the actual image behind
+// This will make the parallax effect better
+.single-about-image {
+  width: 100%;
+  display: block;
+  background: var(--clr-lightgray);
+  overflow: hidden;
+  position: relative;
+}
+
+// This is used for the overlay to take affect
+.single-about-image .overlay:nth-child(1) {
+  background: center center no-repeat;
+  background-size: cover;
+  height: 125%;
+}
+
+// This is what controls everything displayed
+.single-about-image::before {
+  content: "";
+  display: block;
+  padding-top: 125%;
+}

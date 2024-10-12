@@ -1,6 +1,7 @@
 :root {
   --section-padding: clamp(5em, 21vh, 12em);
   --container-padding: 5vw;
+  --gap-padding: clamp(1.5em, 4vw, 2.5em);
 
   --title-size: clamp(5em, 7.5vw, 7.5em);
 
@@ -8,6 +9,7 @@
   --color-dark: #1c1d20;
 
   --clr-black: #1d1d1f;
+  --clr-lightgray: #e9eaeb;
   --clr-transparent: rgba(255, 255, 255, 0.6);
   --clr-transparent-light: rgba(255, 255, 255, 0.4);
   --clr-transparent-full: rgba(255, 255, 255, 1);
@@ -176,6 +178,15 @@ h4 {
 .theme-dark h5,
 .theme-dark p {
   color: var(--color-white);
+}
+
+/* take up the whole screen */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 /* ------------------------- Utils -------------------------------------------------- */
