@@ -1,15 +1,14 @@
 import { Link, Outlet } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
+import "../../App.scss";
 
 const Navigation = () => {
   return (
     <Fragment>
       <nav className="flex">
-        <a href="">
-          <h2>
-            <Link to="about">@Gio </Link>
-          </h2>
-        </a>
+        <Link to="about" className="fs-400">
+          <h2 className="logo">@Gio</h2>
+        </Link>
       </nav>
       {/* // Burger */}
       <div className="btn btn-hamburger">

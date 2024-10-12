@@ -180,6 +180,12 @@ h4 {
   color: var(--color-white);
 }
 
+.logo {
+  width: 230px;
+  height: 25px;
+  font-weight: 600;
+}
+
 /* take up the whole screen */
 .overlay {
   position: absolute;
@@ -187,6 +193,18 @@ h4 {
   left: 0;
   height: 100%;
   width: 100%;
+}
+
+/* ------------------------- Nav -------------------------------------------------- */
+nav,
+footer {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--nav-padding, 2% 5%);
+  min-height: var(--nav-height);
+  background-color: transparent;
+  z-index: 100;
 }
 
 /* ------------------------- Utils -------------------------------------------------- */
