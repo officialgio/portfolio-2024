@@ -1,6 +1,29 @@
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const Intro = () => {
+  const pinContainerRef = useRef<HTMLDivElement>(null);
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // wait for all elements to be mounted before doing any animations
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const pinIntro = gsap.timeline({
+        scrollTrigger: {
+          trigger: pinContainerRef.current,
+          start: "30%",
+          pin: true,
+          pinSpacing: false,
+        },
+      });
+    });
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="section home-intro about-image">
+    <div ref={pinContainerRef} className="section home-intro about-image">
       <div className="container medium">
         <div className="row">
           {/* Small Intro */}
@@ -26,7 +49,7 @@ const Intro = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

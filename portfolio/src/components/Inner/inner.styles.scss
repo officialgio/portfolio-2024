@@ -1,5 +1,5 @@
 .inner {
-  background-color: black;
+  background-color: white;
   .page {
     background-color: white;
   }
@@ -9,7 +9,7 @@
     z-index: 3;
     top: 0;
     left: 0;
-    background-color: white;
+    background-color: var(--clr-black);
     width: 100vw;
     height: 100vh;
   }
