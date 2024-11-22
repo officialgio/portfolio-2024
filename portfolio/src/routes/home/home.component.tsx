@@ -14,7 +14,6 @@ const Home = () => {
   // wait for all elements to be mounted before doing any animations
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      // all your GSAP animation code here
       const pinIntro = gsap.timeline({
         scrollTrigger: {
           trigger: ".home-intro",

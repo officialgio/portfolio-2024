@@ -6,8 +6,8 @@ const Background = () => {
       <div className="section__container fs-700">
         <span className="highlight">
           I'm currently a student at{" "}
-          <a className="light" href="https://www.neiu.edu/" target="_blank">
-            Northeastern Illinois University
+          <a className="light" href="" target="_blank">
+            SCHOOL_NAME
           </a>
           . My expected graduation date is in 2025.
         </span>
