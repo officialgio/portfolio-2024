@@ -1,6 +1,6 @@
 import "../../components/Background/background.styles.scss";
 
-const BackgroundSection = () => {
+const Background = () => {
   return (
     <section id="background" className="section background flex">
       <div className="section__container fs-700">
@@ -27,4 +27,4 @@ const BackgroundSection = () => {
   );
 };
 
-export default BackgroundSection;
+export default Background;
