@@ -29,22 +29,15 @@ const Background = () => {
     >
       <div className="section__container fs-700">
         <span className="highlight">
-          I'm currently a student at{" "}
-          <a className="light" href="" target="_blank">
-            SCHOOL_NAME
-          </a>
-          . My expected graduation date is in 2025.
+          The combination of {/* sample text here, */}
         </span>
+
         <span className="highlight">
-          As a passionate person who loves CS, I enjoy learning about Software
-          Engineering.
-        </span>
-        <span className="highlight">
-          I hope I can take part in the{" "}
-          <span className="light">engineering</span> and
-          <span className="light"> designing</span> spectrum — a combination of
-          technical knowledge with my creative vision to design and implement
-          solutions that fit customer needs.
+          <span className="light"> engineering</span> and
+          <span className="light"> design</span> and
+          <span className="light"> business</span> A vision of solving
+          real-world problems, lead, and implement solutions that will benefit
+          the customer needs.
         </span>
       </div>
     </div>

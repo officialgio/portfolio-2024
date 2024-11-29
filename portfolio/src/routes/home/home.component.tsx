@@ -9,6 +9,11 @@ import Skills from "../../components/Skills/skills.component";
 import Background from "../../components/Background/background.component";
 import Recent from "../../components/Recent/recent.component";
 import BlockImage from "../../components/BlockImage/block-image.component";
+import BlockDescription from "../../components/BlockDescription/block-description.component";
+import {
+  BlockDescriptionConstants,
+  BlockImageConstants,
+} from "../../utils/contants";
 
 const Home = () => {
   return (
@@ -18,8 +23,12 @@ const Home = () => {
       <Skills />
       <Recent />
       <BlockImage
-        title="Software Engineering"
-        imageUrl="https://a.storyblok.com/f/115416/1920x1080/963897dde6/fsc-1.jpg"
+        title={BlockImageConstants.title}
+        imageUrl={BlockImageConstants.imageUrl}
+      />
+      <BlockDescription
+        description={BlockDescriptionConstants.description}
+        imageUrl={BlockDescriptionConstants.imageUrl}
       />
     </Inner>
   );

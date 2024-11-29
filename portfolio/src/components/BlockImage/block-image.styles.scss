@@ -35,3 +35,24 @@
     object-fit: cover;
   }
 }
+
+// Mobile
+@media screen and (max-width: 540px) {
+  .msft,
+  .future {
+    min-height: 30vh !important;
+  }
+
+  .block-fullwidth .text-overlay {
+    text-align: center;
+  }
+
+  .block-fullwidth :is(.overlay-image) {
+    height: 130%;
+    top: -20%;
+  }
+
+  .future :is(.overlay-image) {
+    height: 140%;
+  }
+}
