@@ -19,6 +19,7 @@ function App() {
     })();
   }, []);
 
+  // Defined Routes Here
   return (
     <div data-scroll-container>
       <AnimatePresence mode="wait">

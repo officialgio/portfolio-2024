@@ -211,6 +211,65 @@ footer {
   z-index: 100;
 }
 
+/* ------------------------- Anim -------------------------------------------------- */
+.animate-dot {
+  opacity: 0;
+  animation: animateDot1 2s linear infinite;
+}
+
+.animate-dot:nth-child(2) {
+  animation: animateDot2 2s linear infinite;
+}
+
+.animate-dot:nth-child(3) {
+  animation: animateDot3 2s linear infinite;
+}
+
+@keyframes animateDot1 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+@keyframes animateDot2 {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+@keyframes animateDot3 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
 /* ------------------------- Utils -------------------------------------------------- */
 .fs-900 {
   font-size: var(--fs-900);

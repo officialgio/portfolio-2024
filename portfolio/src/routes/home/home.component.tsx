@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Intro from "../../components/Intro/intro.component";
 import Skills from "../../components/Skills/skills.component";
 import Background from "../../components/Background/background.component";
+import Recent from "../../components/Recent/recent.component";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Intro />
       <Background />
       <Skills />
+      <Recent />
     </Inner>
   );
 };
