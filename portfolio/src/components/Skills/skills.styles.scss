@@ -1,0 +1,31 @@
+/* ------------------------- Skills -------------------------------------------------- */
+.section {
+  & .topics__list {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 12rem 5rem;
+  }
+
+  & .topic {
+    position: relative;
+    justify-content: center;
+  }
+
+  & .topic__img--wrapper {
+    padding: 3rem 1rem;
+  }
+
+  & .topic__img {
+    transition: 250ms ease-in-out;
+  }
+
+  & .topic:hover .topic__img {
+    opacity: 0.86;
+    transform: scale(0.9);
+  }
+
+  //   & .topic span {
+  //     width: 500px;
+  //     height: 800px;
+  //   }
+}

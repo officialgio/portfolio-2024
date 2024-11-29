@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../../components/Background/background.styles.scss";
+import { highlightWordsSection, pinSection } from "../../utils/utils";
 
 const Background = () => {
   const pinContainerRef = useRef<HTMLDivElement>(null);
@@ -12,44 +13,13 @@ const Background = () => {
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       if (pinContainerRef) {
-        // Pins
-        pinBackground();
+        pinSection(pinContainerRef, "0%", "100%");
 
-        /**
-         * Create a GSAP timeline that animates elements with the .highlight class based on scroll position.
-         * Start slightly before the next page. Each .highlight needs to transition to clear light color and then reset (tlHRemove).
-         * Ensure that each of these highlights go 1 by 1 (i.e stagger)
-         */
-        const tlH = gsap.timeline({
-          scrollTrigger: {
-            trigger: ".background",
-            markers: true,
-            scrub: true,
-            start: "-48%",
-            end: "48%",
-          },
-        });
-
-        tlH.fromTo(
-          ".highlight",
-          { color: "rgba(255, 255, 255, 0.4)" },
-          { color: "rgba(255, 255, 255, 1)", stagger: 1 }
-        );
+        highlightWordsSection(pinContainerRef);
       }
     });
     return () => ctx.revert();
   }, []);
-
-  function pinBackground(): void {
-    const pinBackground = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".background",
-        pin: true,
-        start: "0%",
-        end: "100%",
-      },
-    });
-  }
 
   return (
     <div

@@ -1,6 +1,8 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { pinSection } from "../../utils/utils";
+import "../Skills/skills.styles.scss";
 
 const Skills = () => {
   const pinContainerRef = useRef<HTMLDivElement>(null);
@@ -10,24 +12,10 @@ const Skills = () => {
   // wait for all elements to be mounted before doing any animations
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      if (pinContainerRef) {
-        pinSkills();
-      }
+      pinSection(pinContainerRef, "0%", "100%");
     });
     return () => ctx.revert();
   }, []);
-
-  function pinSkills(): void {
-    const pinSkills = gsap.timeline({
-      scrollTrigger: {
-        trigger: pinContainerRef.current,
-        start: "top top",
-        end: "100%",
-        pin: true,
-        pinSpacing: false,
-      },
-    });
-  }
 
   return (
     <div ref={pinContainerRef} id="skills" className="section skills">
@@ -36,9 +24,30 @@ const Skills = () => {
       </div>
       {/* Container */}
       <div className="section__container">
-        <div>
-          Fullstack Development, Distributed Systems, Cloud Engineering, Design
-          (UI/UX)
+        <div className="topics">
+          <div className="topics__list flex">
+            {/* list of topics */}
+            <div className="topic flex">
+              <figure className="topic__img--wrapper flex html">
+                <span className="topic__img fs-600">Fullstack Development</span>
+              </figure>
+            </div>
+            <div className="topic flex">
+              <figure className="topic__img--wrapper flex html">
+                <span className="topic__img fs-600">Distributed Systems</span>
+              </figure>
+            </div>
+            <div className="topic flex">
+              <figure className="topic__img--wrapper flex html">
+                <span className="topic__img fs-600">Cloud Engineering</span>
+              </figure>
+            </div>
+            <div className="topic flex">
+              <figure className="topic__img--wrapper flex html">
+                <span className="topic__img fs-600">Design (UI/UX)</span>
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
     </div>

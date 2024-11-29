@@ -10,9 +10,7 @@ import { About } from "./components/About/about.component";
 function App() {
   const location = useLocation();
 
-  /**
-   * Initialize Smooth Scroll Animations
-   */
+  // Initialize Smooth Scroll Animations
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;

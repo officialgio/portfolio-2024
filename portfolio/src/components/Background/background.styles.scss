@@ -6,6 +6,7 @@
     padding: var(--background-padding, 4.25rem 2rem);
     background-color: var(--clr-black);
     min-height: 105vh;
+    z-index: 3;
   }
 
   & .highlight {
