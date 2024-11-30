@@ -292,6 +292,12 @@ footer {
   }
 }
 
+.span-lines .span-line {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+}
+
 /* ------------------------- Utils -------------------------------------------------- */
 .fs-900 {
   font-size: var(--fs-900);

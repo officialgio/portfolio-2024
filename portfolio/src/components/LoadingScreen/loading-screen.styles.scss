@@ -78,10 +78,8 @@
 .loading-container .loading-words h2 {
   color: whitesmoke;
   position: absolute;
-
   transform: translateX(-50%);
   display: none; // initially
-
   will-change: opacity;
 }
 
