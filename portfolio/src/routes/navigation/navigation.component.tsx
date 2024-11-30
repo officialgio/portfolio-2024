@@ -5,7 +5,7 @@ import "../../App.scss";
 const Navigation = () => {
   return (
     <Fragment>
-      <nav className="flex">
+      <nav className="flex once-in">
         <Link to="about" className="fs-400">
           <h2 className="logo">@Gio</h2>
         </Link>

@@ -211,6 +211,28 @@ footer {
   z-index: 100;
 }
 
+.rounded-div-wrap {
+  width: 100%;
+  top: 0;
+  position: relative;
+  height: 10vh;
+  overflow: hidden;
+}
+
+// The actual rounded div
+.rounded-div {
+  width: 150%;
+  content: "";
+  display: block;
+  position: absolute;
+  background: var(--color-white);
+  height: 750%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -86.666%);
+  z-index: 1;
+}
+
 /* ------------------------- Anim -------------------------------------------------- */
 .animate-dot {
   opacity: 0;

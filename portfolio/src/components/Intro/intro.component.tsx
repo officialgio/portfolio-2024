@@ -22,7 +22,7 @@ const Intro = () => {
         <div className="row">
           {/* Small Intro */}
           <div className="flex-col">
-            <h4 className="spna-lines animate fs-500 ">
+            <h4 className="once-in spna-lines animate fs-500 ">
               I'm Giovanny - a Multidisciplinary Engineer with a focus on Web
               and Cloud Engineering
             </h4>
