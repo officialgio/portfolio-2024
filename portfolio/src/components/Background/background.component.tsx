@@ -29,13 +29,13 @@ const Background = () => {
     >
       <div className="section__container fs-700">
         <span className="highlight">
-          The combination of {/* sample text here, */}
+          A combination of {/* sample text here, */}
         </span>
 
         <span className="highlight">
           <span className="light"> engineering</span> and
-          <span className="light"> design</span> and
-          <span className="light"> business</span> A vision of solving
+          <span className="light"> design</span>, and
+          <span className="light"> business</span> I have vision of solving
           real-world problems, lead, and implement solutions that will benefit
           the customer needs.
         </span>

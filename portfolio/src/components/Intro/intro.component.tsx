@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { pinSection } from "../../utils/utils";
+import "../Intro/intro.styles.scss";
 
 const Intro = () => {
   const pinContainerRef = useRef<HTMLDivElement>(null);
@@ -22,7 +23,8 @@ const Intro = () => {
           {/* Small Intro */}
           <div className="flex-col">
             <h4 className="spna-lines animate fs-500 ">
-              Hi, I'm Giovanny! I'm a Software Engineer.
+              I'm Giovanny - a Multidisciplinary Engineer with a focus on Web
+              and Cloud Engineering
             </h4>
           </div>
           {/* Intro Image */}
