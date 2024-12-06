@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { pinSection } from "../../utils/utils";
+import { initTricksWords, pinSection } from "../../utils/utils";
 import $ from "jquery";
 import "../Intro/intro.styles.scss";
 
@@ -18,36 +18,6 @@ const Intro = () => {
     });
     return () => ctx.revert();
   }, []);
-
-  /**
-   * Initializes tricks for words by wrapping each word in elements with the class `.span-lines`
-   * into nested `<span>` elements. This is typically used for animating individual words or letters.
-   *
-   * Each word within the elements is wrapped as follows:
-   * - `<span class="span-line"><span class="span-line-inner">word</span></span>`
-   *
-   * @returns {void} This function does not return any value.
-   */
-  function initTricksWords(): void {
-    // Select all elements with the class `.span-lines`
-    const spanWords = document.getElementsByClassName("span-lines");
-
-    for (let i = 0; i < spanWords.length; i++) {
-      const wordWrap = spanWords.item(i);
-
-      if (wordWrap && wordWrap.innerHTML) {
-        // Replace each word with the nested <span> structure
-        wordWrap.innerHTML = wordWrap.innerHTML.replace(
-          /(\s+|<\/?[^>]+>)*([^\s<]+)/g, // Match spaces/tags and words
-          (match, leading, word) => {
-            // Ensure proper handling of leading spaces or tags
-            const sanitizedLeading = leading || ""; // Keep leading spaces or tags intact
-            return `${sanitizedLeading}<span class="span-line"><span class="span-line-inner">${word}</span></span>`;
-          }
-        );
-      }
-    }
-  }
 
   function initScrolltriggerAnimations() {
     const spanLine = document.querySelector(".span-lines.animate"); // <h4 class="span-lines animate fs-500">

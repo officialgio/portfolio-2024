@@ -67,3 +67,38 @@ export function highlightWordsSection(
     { color: "rgba(255, 255, 255, 1)", stagger: 1 }
   );
 }
+
+/**
+ * Initializes tricks for words by wrapping each word in elements with the class `.span-lines`
+ * into nested `<span>` elements. This is typically used for animating individual words or letters.
+ *
+ * Each word within the elements is wrapped as follows:
+ * - `<span class="span-line"><span class="span-line-inner">word</span></span>`
+ *
+ * @returns {void} This function does not return any value.
+ */
+export function initTricksWords(): void {
+  // Select all elements with the class `.span-lines`
+  const spanWords = document.getElementsByClassName("span-lines");
+
+  for (let i = 0; i < spanWords.length; i++) {
+    const wordWrap = spanWords.item(i);
+
+    if (wordWrap && wordWrap.innerHTML) {
+      // Check if already processed by looking for `class="span-line-inner"`
+      if (wordWrap.innerHTML.indexOf('class="span-line-inner"') !== -1) {
+        // Already processed, skip to avoid corruption
+        continue;
+      }
+
+      // Replace each word with the nested <span> structure only on original text
+      wordWrap.innerHTML = wordWrap.innerHTML.replace(
+        /(^|<\/?[^>]+>|\s+)([^\s<]+)/g,
+        (match, leading, word) => {
+          const safeLeading = leading || "";
+          return `${safeLeading}<span class="span-line"><span class="span-line-inner">${word}</span></span>`;
+        }
+      );
+    }
+  }
+}
