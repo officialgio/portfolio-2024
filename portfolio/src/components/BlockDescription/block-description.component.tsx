@@ -1,3 +1,6 @@
+import { useLayoutEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../BlockDescription/block-description.styles.scss";
 
 export type DescriptionDetails = {
@@ -6,6 +9,13 @@ export type DescriptionDetails = {
 };
 
 const BlockDescription = ({ description, imageUrl }: DescriptionDetails) => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {});
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div className="section description">
       <div className="container medium">

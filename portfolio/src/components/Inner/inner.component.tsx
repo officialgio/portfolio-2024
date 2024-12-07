@@ -4,6 +4,11 @@ import "../Inner/inner.styles.scss";
 import Navigation from "../../routes/navigation/navigation.component";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  initScrolltriggerAnimations,
+  initTricksWords,
+  onceInAnimation,
+} from "../../utils/utils";
 
 interface InnerProps {
   children: ReactNode;
@@ -86,44 +91,11 @@ export const Inner = ({ children }: InnerProps) => {
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       onceInAnimation();
+      initTricksWords();
+      initScrolltriggerAnimations();
     });
     return () => ctx.revert();
   }, []);
-
-  /**
-   * Triggers a one-time animation on elements with the class `.once-in`.
-   *
-   * This function uses GSAP to animate the `y` position of targeted elements
-   * depending on the viewport width:
-   * - For widths greater than 540px, the initial position is set to `50vh`.
-   * - For widths 540px or smaller, the initial position is set to `10vh`.
-   *
-   * The animation moves the elements to `0vh` with a smooth easing effect and applies
-   * a staggered delay for sequential animations.
-   *
-   * @returns {void} This function does not return any value.
-   */
-  function onceInAnimation(): void {
-    var tl = gsap.timeline();
-
-    if (window.innerWidth > 540) {
-      tl.set(".main .once-in", {
-        y: "50vh", // up illusion
-      });
-    } else {
-      tl.set(".main .once-in", {
-        y: "10vh",
-      });
-    }
-
-    tl.to(".main .once-in", {
-      duration: 1.5,
-      y: "0vh",
-      stagger: 0.07,
-      ease: "Expo.easeOut",
-      clearProps: true,
-    });
-  }
 
   /**
    * NOTE: This is buggy - ensure you leave the page div as is. Be careful with nesting <motion.div>

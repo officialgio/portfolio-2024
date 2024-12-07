@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import { RefObject } from "react";
+import $ from "jquery";
 
 /**
  * Creates a pinned section animation using GSAP's ScrollTrigger.
@@ -99,6 +100,121 @@ export function initTricksWords(): void {
           return `${safeLeading}<span class="span-line"><span class="span-line-inner">${word}</span></span>`;
         }
       );
+    }
+  }
+}
+
+/**
+ * Triggers a one-time animation on elements with the class `.once-in`.
+ *
+ * This function uses GSAP to animate the `y` position of targeted elements
+ * depending on the viewport width:
+ * - For widths greater than 540px, the initial position is set to `50vh`.
+ * - For widths 540px or smaller, the initial position is set to `10vh`.
+ *
+ * The animation moves the elements to `0vh` with a smooth easing effect and applies
+ * a staggered delay for sequential animations.
+ *
+ * @returns {void} This function does not return any value.
+ */
+export function onceInAnimation(): void {
+  var tl = gsap.timeline();
+
+  if (window.innerWidth > 540) {
+    tl.set(".main .once-in", {
+      y: "50vh", // up illusion
+    });
+  } else {
+    tl.set(".main .once-in", {
+      y: "10vh",
+    });
+  }
+
+  tl.to(".main .once-in", {
+    duration: 1.5,
+    y: "0vh",
+    stagger: 0.07,
+    ease: "Expo.easeOut",
+    clearProps: true,
+  });
+}
+
+export function initScrolltriggerAnimations(): void {
+  const spanLine = document.querySelector(".span-lines.animate"); // <h4 class="span-lines animate fs-500">
+  const homeSection = document.querySelector(".home-intro"); // <h4 class="span-lines animate fs-500">
+  const descriptionSection = document.querySelector(".description");
+  const workGrid = document.querySelector(".work-grid");
+
+  // For Intro and Description Section
+  if (spanLine && homeSection && descriptionSection) {
+    $(".home-intro .span-lines.animate").each(function (index) {
+      let triggerElement = $(this);
+      let targetElement = $(".home-intro .span-lines.animate .span-line-inner");
+
+      let tl;
+
+      runGsapWordAnimations(triggerElement, targetElement, tl);
+    });
+
+    $(".description .span-lines.animate").each(function (index) {
+      let triggerElement = $(this);
+      let targetElement = $(
+        ".description .span-lines.animate .span-line-inner"
+      );
+      let tl;
+
+      runGsapWordAnimations(triggerElement, targetElement, tl);
+    });
+  }
+
+  // For Work Grid Animation
+  if (spanLine && workGrid) {
+    $(".work-grid .span-lines.animate").each(function (index) {
+      let triggerElement = $(this);
+      let targetElement = $(".work-grid .span-lines.animate .span-line-inner");
+
+      let tl;
+
+      // this code might be different...
+    });
+  }
+
+  function runGsapWordAnimations(
+    triggerElement: JQuery<HTMLElement>,
+    targetElement: JQuery<HTMLElement>,
+    tl: any
+  ): void {
+    if (($(window).width() as number) > 540) {
+      // Desktop Animation
+      tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerElement,
+          toggleActions: "play none none reverse",
+          start: "-20% 20% ",
+          end: "10% 0%",
+          // markers: true,
+        },
+      });
+    } else {
+      tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerElement,
+          toggleActions: "play none none reverse",
+          start: "-69% 10% ",
+          end: "10% 0%",
+          // markers: true,
+        },
+      });
+    }
+
+    if (targetElement) {
+      tl.from(targetElement, {
+        y: "100%", // set visible
+        stagger: 0.01,
+        ease: "power3.out",
+        duration: 1,
+        delay: 0,
+      });
     }
   }
 }

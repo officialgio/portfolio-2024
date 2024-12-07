@@ -25,7 +25,7 @@ function App() {
         locomotiveScroll.start();
       }, 3000);
     })();
-  }, []);
+  }, [isLoading]);
 
   // Defined Routes Here
   return (
