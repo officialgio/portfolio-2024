@@ -179,6 +179,7 @@ const LoadingScreen = () => {
           <h2 className="home-active">
             Giovanny<div className="dot"></div>
           </h2>
+          {/* Additional for switching transitions */}
           <h2 className="active">
             Home<div className="dot"></div>
           </h2>

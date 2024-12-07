@@ -139,11 +139,27 @@ export function onceInAnimation(): void {
   });
 }
 
+/**
+ * Initializes scroll-triggered animations for text elements within specific sections.
+ *
+ * This function searches for elements with the `.span-lines.animate` class inside two sections:
+ * - `.home-intro` (intro section)
+ * - `.description` (description section)
+ *
+ * If both sections and a target `.span-lines.animate` element are found, it applies GSAP animations
+ * to inner text elements (`.span-line-inner`) based on the user's viewport width:
+ * - Desktop (width > 540px) uses one set of scroll trigger start/end points.
+ * - Mobile/tablet (width <= 540px) uses another set.
+ *
+ * Each matched `.span-lines.animate` element is processed to stagger text animation:
+ * characters/words initially slide in from `y: 100%` and animate into view with a smooth easing.
+ *
+ * @returns {void} No return value. Updates the DOM and attaches GSAP timelines and ScrollTriggers.
+ */
 export function initScrolltriggerAnimations(): void {
   const spanLine = document.querySelector(".span-lines.animate"); // <h4 class="span-lines animate fs-500">
   const homeSection = document.querySelector(".home-intro"); // <h4 class="span-lines animate fs-500">
   const descriptionSection = document.querySelector(".description");
-  const workGrid = document.querySelector(".work-grid");
 
   // For Intro and Description Section
   if (spanLine && homeSection && descriptionSection) {
@@ -164,18 +180,6 @@ export function initScrolltriggerAnimations(): void {
       let tl;
 
       runGsapWordAnimations(triggerElement, targetElement, tl);
-    });
-  }
-
-  // For Work Grid Animation
-  if (spanLine && workGrid) {
-    $(".work-grid .span-lines.animate").each(function (index) {
-      let triggerElement = $(this);
-      let targetElement = $(".work-grid .span-lines.animate .span-line-inner");
-
-      let tl;
-
-      // this code might be different...
     });
   }
 
