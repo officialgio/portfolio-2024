@@ -3,6 +3,23 @@ import { RefObject } from "react";
 import $ from "jquery";
 
 /**
+ * Add pinning to a component based on its start and end position.
+ */
+export function pinComponent(
+  pinContainerRef: RefObject<HTMLDivElement>,
+  start: string,
+  end?: string
+): void {
+  if (isDesktop()) {
+    pinSection(pinContainerRef, start, end);
+  }
+
+  function isDesktop(): boolean {
+    return window.innerWidth > 540;
+  }
+}
+
+/**
  * Creates a pinned section animation using GSAP's ScrollTrigger.
  *
  * This utility function pins a section of the page based on the provided container reference,

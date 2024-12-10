@@ -3,3 +3,28 @@
     width: 25ch;
   }
 }
+
+@media screen and (max-width: 540px) {
+  .home-intro {
+    display: flex;
+    flex-direction: column !important;
+
+    // Include this to remove extra margin on mobile
+    & .container {
+      margin: unset;
+    }
+
+    // Wrap the text and image
+    & .row {
+      flex-wrap: wrap;
+    }
+  }
+
+  .home-intro .flex-col:nth-child(1) {
+    padding-bottom: calc(var(--gap-padding) * 3) !important;
+  }
+
+  .about-image .flex-col:nth-child(2) {
+    width: 100%;
+  }
+}

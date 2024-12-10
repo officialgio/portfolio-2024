@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { pinSection } from "../../utils/utils";
+import { pinComponent, pinSection } from "../../utils/utils";
 import "../Skills/skills.styles.scss";
 
 const Skills = () => {
@@ -12,7 +12,7 @@ const Skills = () => {
   // wait for all elements to be mounted before doing any animations
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      pinSection(pinContainerRef, "0%", "100%");
+      pinComponent(pinContainerRef, "0%", "100%");
     });
     return () => ctx.revert();
   }, []);

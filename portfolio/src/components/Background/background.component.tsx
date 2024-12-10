@@ -2,7 +2,11 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../../components/Background/background.styles.scss";
-import { highlightWordsSection, pinSection } from "../../utils/utils";
+import {
+  highlightWordsSection,
+  pinComponent,
+  pinSection,
+} from "../../utils/utils";
 
 const Background = () => {
   const pinContainerRef = useRef<HTMLDivElement>(null);
@@ -12,11 +16,8 @@ const Background = () => {
   // wait for all elements to be mounted before doing any animations
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      if (pinContainerRef) {
-        pinSection(pinContainerRef, "0%", "100%");
-
-        highlightWordsSection(pinContainerRef);
-      }
+      pinComponent(pinContainerRef, "0%", "100%");
+      highlightWordsSection(pinContainerRef);
     });
     return () => ctx.revert();
   }, []);

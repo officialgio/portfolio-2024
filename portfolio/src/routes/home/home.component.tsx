@@ -10,10 +10,6 @@ import Background from "../../components/Background/background.component";
 import Recent from "../../components/Recent/recent.component";
 import BlockImage from "../../components/BlockImage/block-image.component";
 import BlockDescription from "../../components/BlockDescription/block-description.component";
-import {
-  BlockDescriptionConstants,
-  BlockImageConstants,
-} from "../../utils/contants";
 
 const Home = () => {
   return (
