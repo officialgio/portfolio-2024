@@ -16,7 +16,7 @@ const Intro = () => {
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      pinSection(pinContainerRef, "30%");
+      // pinSection(pinContainerRef, "30%");
     });
     return () => ctx.revert();
   }, []);

@@ -22,14 +22,8 @@ const Home = () => {
       <Background />
       <Skills />
       <Recent />
-      <BlockImage
-        title={BlockImageConstants.title}
-        imageUrl={BlockImageConstants.imageUrl}
-      />
-      <BlockDescription
-        description={BlockDescriptionConstants.description}
-        imageUrl={BlockDescriptionConstants.imageUrl}
-      />
+      <BlockImage />
+      <BlockDescription />
     </Inner>
   );
 };

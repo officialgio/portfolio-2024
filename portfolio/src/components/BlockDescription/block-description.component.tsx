@@ -2,13 +2,11 @@ import { useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../BlockDescription/block-description.styles.scss";
+import { BlockDescriptionConstants } from "../../utils/contants";
 
-export type DescriptionDetails = {
-  description: string;
-  imageUrl: string;
-};
+const BlockDescription = () => {
+  const { description, imageUrl } = BlockDescriptionConstants;
 
-const BlockDescription = ({ description, imageUrl }: DescriptionDetails) => {
   gsap.registerPlugin(ScrollTrigger);
 
   useLayoutEffect(() => {

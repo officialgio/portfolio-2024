@@ -1,3 +1,4 @@
+import { BlockImageConstants } from "../../utils/contants";
 import "../BlockImage/block-image.styles.scss";
 
 export type ImageOverlay = {
@@ -5,7 +6,9 @@ export type ImageOverlay = {
   imageUrl: string;
 };
 
-const BlockImage = ({ title, imageUrl }: ImageOverlay) => {
+const BlockImage = () => {
+  const { title, imageUrl } = BlockImageConstants;
+
   return (
     <div className="section block-fullwidth">
       <div className="row">
