@@ -25,3 +25,17 @@
     padding-bottom: 5rem;
   }
 }
+
+@media screen and (max-width: 540px) {
+  .description {
+    overflow: hidden;
+
+    & .single-about-image {
+      width: 150%;
+    }
+
+    & .flex-col:nth-child(1) {
+      width: 70% !important;
+    }
+  }
+}

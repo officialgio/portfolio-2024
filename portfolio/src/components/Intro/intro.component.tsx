@@ -1,13 +1,9 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  initScrolltriggerAnimations,
-  initTricksWords,
-  pinSection,
-} from "../../utils/utils";
 import $ from "jquery";
 import "../Intro/intro.styles.scss";
+import { IntroConstants } from "../../utils/contants";
 
 const Intro = () => {
   const pinContainerRef = useRef<HTMLDivElement>(null);
@@ -40,7 +36,7 @@ const Intro = () => {
                   data-scroll
                   data-scroll-speed="0.1"
                   className="overlay overlay-image"
-                  src="https://freenaturestock.com/wp-content/uploads/freenaturestock-2268-768x1152.jpg"
+                  src={IntroConstants.imageUrl}
                   alt="headshot"
                 />
               </div>

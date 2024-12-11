@@ -5,9 +5,9 @@
 
   --title-size: clamp(5em, 7.5vw, 7.5em);
 
-  --color-white: whitesmoke;
   --color-dark: #1c1d20;
 
+  --clr-white: #fff;
   --clr-black: #1d1d1f;
   --clr-lightgray: #e9eaeb;
   --clr-transparent: rgba(255, 255, 255, 0.6);
@@ -188,7 +188,7 @@ h4 {
 .theme-dark h4,
 .theme-dark h5,
 .theme-dark p {
-  color: var(--color-white);
+  color: var(--clr-white);
 }
 
 .logo {
