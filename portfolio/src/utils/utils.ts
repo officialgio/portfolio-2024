@@ -72,7 +72,7 @@ export function highlightWordsSection(
   const tlH = gsap.timeline({
     scrollTrigger: {
       trigger: sectionName.current,
-      markers: true,
+      // markers: true,
       scrub: true,
       start: "-48%",
       end: "48%",

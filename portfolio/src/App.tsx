@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.scss";
 import { Route, Router, Routes, useLocation } from "react-router-dom";
-import Navigation from "./routes/navigation/navigation.component";
 import Home from "./routes/home/home.component";
 import { AnimatePresence } from "framer-motion";
 import { About } from "./components/About/about.component";
